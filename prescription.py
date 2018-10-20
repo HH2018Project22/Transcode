@@ -25,11 +25,12 @@ class Prescription():
 Son id etablissement est {3}.\nLe prescripteur est {4}, {5}.
 Le service distributeur est {6}.\nLe bon de commande est {7}.
 Le sexe est {8}.\nLa date de naissance est {9}/{10}/{11}.
-Le lieu de naissance est {12}.\nLes poches sont {13}""".format(self.nom[0],\
+Le lieu de naissance est {12}.\n""".format(self.nom[0],\
 self.nom[1], self.id_inlog, self.id_etablissement, self.service_prescripteur,\
 self.etablissement, self.service_distributeur,  self.bon_commande, self.sexe,\
-self.naissance[0], self.naissance[1], self.naissance[2], self.lieu_naissance,\
-(val.__repr__() for val in self.poches.values())))
+self.naissance[0], self.naissance[1], self.naissance[2], self.lieu_naissance))
+        for val in self.poches.values():
+            val.__repr__()
 
     def set_etablissement(self, etablissement):
         """Set the prescription's etablissement"""
