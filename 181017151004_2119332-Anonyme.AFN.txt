@@ -33,7 +33,7 @@ ra
 rd,ANONYME
 rf,Louis
 rj,M
-rl,AAAMMJJ
+rl,AAAAMMJJ
 rm,VESOUL
 rn,005565338725
 sh,250000015
