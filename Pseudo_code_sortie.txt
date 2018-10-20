@@ -1,0 +1,14 @@
+# n° bon de commande
+# service
+# nom de naissance
+# prenom
+# nom d'usage
+# date de naissance
+# Sexe
+# urgence transfusionnelle oui/non
+# si non date + heure transfusionnelle
+# renseignement clinique
+# type de poche (CGR)
+# protocole transfusionnelle
+# délivrance fractionnée oui/transfusionnelle
+# Medecin prescripteur
