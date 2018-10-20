@@ -46,3 +46,5 @@ def analysis(filename):
     with open("result.txt", encoding="utf-8", mode='w') as result:
         for i in values:
             result.write(i+'\n')
+
+analysis("AFN_transpose.csv")
