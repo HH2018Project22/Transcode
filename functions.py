@@ -7,18 +7,15 @@ import pickle
 import poche
 import prescription
 
-
-
-
-
 def recuperation(inputname, outputname):
-    sh = 0
-    ud = 0
-    ej = 0
+    """Get all data needed in the bases AFNOR file"""
+    SH = 0
+    UD = 0
+    EJ = 0
 
     try:
         os.remove(outputname)
-    except:
+    except FileNotFoundError:
         pass
 
     with open(outputname, mode='w'):
@@ -29,18 +26,18 @@ def recuperation(inputname, outputname):
         for line in file:
             if line[0]+line[1] in cle:
                 if line[0]+line[1] == "sh":
-                    sh += 1
-                    if sh == 1:
+                    SH += 1
+                    if SH == 1:
                         with open(outputname, 'a') as result:
                             result.write(line)
                 elif line[0]+line[1] == "ud":
-                    ud += 1
-                    if ud == 1:
+                    UD += 1
+                    if UD == 1:
                         with open(outputname, 'a') as result:
                             result.write(line)
                 elif line[0]+line[1] == "ej":
-                    ej += 1
-                    if ej == 1:
+                    EJ += 1
+                    if EJ == 1:
                         with open(outputname, 'a') as result:
                             result.write(line)
                 else:
