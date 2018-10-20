@@ -19,7 +19,7 @@ self.contenu, self.phenotype, self.irradier, self.code_identification) )
 
     def __str__(self):
         return ''
-        
+
     def set_code_identification(self, code_identification):
         """Set code identifier of the blood pocket"""
         self.code_identification = code_identification
@@ -31,3 +31,19 @@ self.contenu, self.phenotype, self.irradier, self.code_identification) )
     def set_phenotype(self, boolean):
         """Set the phenotype caracteristic of the blood pocket"""
         self.phenotype = boolean
+
+    def get_code_identification(self):
+        """Get code identifier of the blood pocket"""
+        return self.code_identification
+
+    def get_irradier(self):
+        """Get the irradiation caracteristic of the blood pocket"""
+        return self.irradier
+
+    def get_phenotype(self):
+        """Get the phenotype caracteristic of the blood pocket"""
+        return self.phenotype
+
+    def get_contenu(self):
+        """Get the contain of the blood pocket"""
+        return self.contenu
