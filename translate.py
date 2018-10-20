@@ -34,7 +34,7 @@ def translate(filename):
         for row in temp:
             val = row[1]
             key.append(row[0])
-            if val[0] == '0':
+            if val[0] == '0' and row[0] != "ud":
                 val = val[1:]
             if val in keys:
                 values.append(dict_code[val])
