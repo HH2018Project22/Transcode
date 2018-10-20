@@ -3,7 +3,7 @@
 Author: Korgan
 """
 import csv
-
+import pickle
 import poche
 import prescription
 i = 0
@@ -50,3 +50,5 @@ with open("result.csv") as temp:
     file.set_poches(pocket)
 
 file.__repr__()
+with open("test.obj","wb") as test:
+    pickle.dump(file, test)
