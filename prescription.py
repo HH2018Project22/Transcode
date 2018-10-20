@@ -109,3 +109,7 @@ self.naissance[0], self.naissance[1], self.naissance[2], self.lieu_naissance))
     def get_lieu_naissance(self):
         """Return the birth place"""
         return self.lieu_naissance
+
+    def get_poches(self):
+        """Return the poches"""
+        return self.poches
