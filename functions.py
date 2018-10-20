@@ -7,7 +7,6 @@ import pickle
 import poche
 import prescription
 
-<<<<<<< HEAD
 DICT_CODE = dict()
 KEY = []
 KEYS = []
@@ -16,8 +15,6 @@ VALUES = []
 
 
 
-=======
->>>>>>> 4e39b8f103e71c7f9dd5b96936d1fbda1d38756b
 def recuperation(inputname, outputname):
     """Get all data needed in the bases AFNOR file"""
     SH = 0
