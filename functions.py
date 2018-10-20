@@ -144,4 +144,4 @@ def load_object(inputname):
     """Loading previously created object."""
     with open(inputname, "rb") as test:
         obj = pickle.load(test)
-        print(obj)
+    return obj

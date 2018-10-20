@@ -13,3 +13,5 @@ try:
     os.remove("temp2.csv")
 except FileNotFoundError:
     pass
+
+OBJ = functions.load_object("prescription.obj")
