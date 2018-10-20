@@ -186,7 +186,7 @@ def compare_prescription(presc1, presc2):
 
     for i, j in zip(poche_presc1.values(), poche_presc2.values()):
         l += 1
-        error = True
+        error = False
         dict_i={"Contenu":i.get_contenu,
                 "Phenotype":i.get_phenotype,
                 "Irradier":i.get_irradier,
@@ -202,3 +202,6 @@ def compare_prescription(presc1, presc2):
             if dict_i[k]() != dict_j[k]():
                 print("Error at {0}, {1} does not match with {2} for blood pockect {3}".format(k,\
                 dict_i[k](), dict_j[k](), l))
+                error = True
+    if not error :
+        print("Identity match 100%. compareason is over.")
