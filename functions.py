@@ -135,7 +135,6 @@ def analysis(inputname, outputname):
 
         file.set_poches(pocket)
 
-    file.__repr__()
     with open(outputname, "wb") as test:
         pickle.dump(file, test)
 
@@ -145,3 +144,35 @@ def load_object(inputname):
     with open(inputname, "rb") as test:
         obj = pickle.load(test)
     return obj
+
+def compare_prescription(presc1, presc2):
+    """Make a compareason between two prescription"""
+    dict_attribute1 = {"Name":presc1.get_nom,
+                       "Id_inlog":presc1.get_id_inlog,
+                       "Id_etablissement":presc1.get_id_etablissement,
+                       "Service_distributeur":presc1.get_service_distributeur,
+                       "Servce_prescriveur":presc1.get_service_prescriveur,
+                       "Etablissement":presc1.get_etablissement,
+                       "Bon_commande":presc1.get_bon_commande,
+                       "Sexe":presc1.get_sexe,
+                       "Date_naissance":presc1.get_naissance,
+                       "Lieu_naissance":presc1.get_lieu_naissance,
+                       "Poches":presc1.get_poches
+                      }
+    dict_attribute2 = {"Name":presc2.get_nom,
+                       "Id_inlog":presc2.get_id_inlog,
+                       "Id_etablissement":presc2.get_id_etablissement,
+                       "Service_distributeur":presc2.get_service_distributeur,
+                       "Servce_prescriveur":presc2.get_service_prescriveur,
+                       "Etablissement":presc2.get_etablissement,
+                       "Bon_commande":presc2.get_bon_commande,
+                       "Sexe":presc2.get_sexe,
+                       "Date_naissance":presc2.get_naissance,
+                       "Lieu_naissance":presc2.get_lieu_naissance,
+                       "Poches":presc2.get_poches
+                      }
+
+    for i in dict_attribute1:
+        if dict_attribute1[i]() != dict_attribute2[i]():
+            print("Error at {0}, {1} does not match with {2}".format(i, dict_attribute1[i](),\
+            dict_attribute2[i]()))

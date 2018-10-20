@@ -15,3 +15,6 @@ except FileNotFoundError:
     pass
 
 OBJ = functions.load_object("prescription.obj")
+OBJ2 = functions.load_object("prescription_2.obj")
+
+functions.compare_prescription(OBJ, OBJ2)
