@@ -5,13 +5,13 @@
 
 class Prescription():
     """docstring for Prescription."""
-    def __init__(self, service_prescripteur):
+    def __init__(self, service_distributeur):
         """Initialization for Prescription object"""
         self.nom = []
         self.id_inlog = 0
         self.id_etablissement = 0
-        self.service_distributeur = 0
-        self.service_prescripteur = service_prescripteur
+        self.service_distributeur = service_distributeur
+        self.service_prescripteur = 0
         self.etablissement = 0
         self.bon_commande = 0
         self.sexe = ""
@@ -72,3 +72,7 @@ self.naissance[0], self.naissance[1], self.naissance[2], self.lieu_naissance,\
     def set_poches(self, poche):
         """Set the poche"""
         self.poches.update(poche)
+
+    def set_service_prescripteur(self, prescripteur):
+        """Set prescriptor's service"""
+        self.service_prescripteur = prescripteur

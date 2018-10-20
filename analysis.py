@@ -22,8 +22,10 @@ with open("result.csv") as temp:
                 pocket["poche_"+str(i)].set_irradier(True)
             else:
                 pocket["poche_"+str(i)].set_phenotype(True)
-        elif row[0] == "ud":
+        elif row[0] == "ej":
             file = prescription.Prescription(row[1])
+        elif row[0] == "ud":
+            file.set_service_prescripteur(row[1])
         elif row[0] == "sh":
             file.set_etablissement(row[1])
         elif row[0] == "ge":
