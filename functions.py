@@ -86,7 +86,7 @@ def translate(inputname, outputname):
 
     try:
         os.remove(outputname)
-    except:
+    except FileNotFoundError:
         pass
 
     with open(outputname, mode='w') as temp:
