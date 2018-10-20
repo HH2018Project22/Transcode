@@ -115,7 +115,7 @@ self.naissance[0], self.naissance[1], self.naissance[2], self.lieu_naissance))
         """Return the id in inlog"""
         return self.id_inlog
 
-    def get_service_prescripteur(self):
+    def get_service_prescriveur(self):
         """Return prescriptor's service"""
         return self.service_prescripteur
 
