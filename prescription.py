@@ -82,6 +82,11 @@ self.naissance[0], self.naissance[1], self.naissance[2], self.lieu_naissance))
         self.service_prescripteur = prescripteur
 
 
+
+    def get_nom(self):
+        """Return name"""
+        return self.nom
+
     def get_etablissement(self):
         """Return the etablissment"""
         return self.etablissement
@@ -89,14 +94,6 @@ self.naissance[0], self.naissance[1], self.naissance[2], self.lieu_naissance))
     def get_bon_commande(self):
         """Return the purchase order id"""
         return self.bon_commande
-
-    def get_nomf(self):
-        """Return the last name"""
-        return self.nom
-
-    def get_pnom(self):
-        """Return the first name"""
-        return self.nom
 
     def get_sexe(self):
         """Return the sexe"""
@@ -113,3 +110,19 @@ self.naissance[0], self.naissance[1], self.naissance[2], self.lieu_naissance))
     def get_poches(self):
         """Return the poches"""
         return self.poches
+
+    def get_id_inlog(self):
+        """Return the id in inlog"""
+        return self.id_inlog
+
+    def get_service_prescripteur(self):
+        """Return prescriptor's service"""
+        return self.service_prescripteur
+
+    def get_service_distributeur(self):
+        """Return prescriptor's service"""
+        return self.service_distributeur
+
+    def get_id_etablissement(self):
+        """Return the id in the etablissement"""
+        return self.id_etablissement
