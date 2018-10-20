@@ -17,6 +17,9 @@ class Poche():
 Elle est phénotypé ? {2}\nSon code d'identification est : {3}""".format(\
 self.contenu, self.phenotype, self.irradier, self.code_identification) )
 
+    def __str__(self):
+        return ''
+        
     def set_code_identification(self, code_identification):
         """Set code identifier of the blood pocket"""
         self.code_identification = code_identification

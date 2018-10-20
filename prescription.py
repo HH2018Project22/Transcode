@@ -32,6 +32,9 @@ self.naissance[0], self.naissance[1], self.naissance[2], self.lieu_naissance))
         for val in self.poches.values():
             val.__repr__()
 
+    def __str__(self):
+        return ''
+
     def set_etablissement(self, etablissement):
         """Set the prescription's etablissement"""
         self.etablissement = etablissement
