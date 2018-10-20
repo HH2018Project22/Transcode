@@ -21,14 +21,15 @@ class Prescription():
 
     def __repr__(self):
         """Command Line representation of the prescription"""
-        print("""Le nom du patient est {0} {1}.\nSon id inlog est {2}.\n
-Son id etablissement est {3}.\nLe prescripteur est {4}, {5}.\n
-Le service distributeur est {6}.\n Le bon de commande est {7}.\n
-Le sexe est {8}.\nLa date de naissance est {9}/{10}/{11}.\nLe lieu de naissance
-est {12}.\nLes poches sont {13}""".format(self.nom[0], self.nom[1], self.id_inlog\
-, self.id_etablissement, self.service_prescripteur, self.etablissement, \
-self.service_distributeur,  self.bon_commande, self.sexe, self.naissance[0], \
-self.naissance[1], self.naissance[2], self.lieu_naissance, (val.__repr__() for val in self.poches.values())))
+        print("""Le nom du patient est {0} {1}.\nSon id inlog est {2}.
+Son id etablissement est {3}.\nLe prescripteur est {4}, {5}.
+Le service distributeur est {6}.\nLe bon de commande est {7}.
+Le sexe est {8}.\nLa date de naissance est {9}/{10}/{11}.
+Le lieu de naissance est {12}.\nLes poches sont {13}""".format(self.nom[0],\
+self.nom[1], self.id_inlog, self.id_etablissement, self.service_prescripteur,\
+self.etablissement, self.service_distributeur,  self.bon_commande, self.sexe,\
+self.naissance[0], self.naissance[1], self.naissance[2], self.lieu_naissance,\
+(val.__repr__() for val in self.poches.values())))
 
     def set_etablissement(self, etablissement):
         """Set the prescription's etablissement"""
