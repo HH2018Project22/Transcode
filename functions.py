@@ -7,6 +7,10 @@ import pickle
 import poche
 import prescription
 
+DICT_CODE = dict()
+KEY = []
+KEYS = []
+VALUES = []
 
 
 
@@ -49,39 +53,35 @@ def recuperation(inputname, outputname):
 
 def translate(inputname, outputname):
     """Analyse filename"""
-    dict_code = dict()
-    values = []
-    keys = []
-    key = []
 
     with open("Code_Facturation_Inlog.csv") as facturation:
         dict_temp = dict()
         temp = csv.reader(facturation)
         for row in temp:
             dict_temp[row[0]] = row[1]
-            dict_code.update(dict_temp)
+            DICT_CODE.update(dict_temp)
 
     with open("Code_Produits_Inlog.csv") as products:
         dict_temp = dict()
         temp = csv.reader(products)
         for row in temp:
             dict_temp[row[0]] = row[1]
-            dict_code.update(dict_temp)
+            DICT_CODE.update(dict_temp)
 
-    for i in dict_code.keys():
-        keys.append(str(i))
+    for i in DICT_CODE:
+        KEYS.append(str(i))
 
     with open(inputname) as csvfile:
         temp = csv.reader(csvfile)
         for row in temp:
             val = row[1]
-            key.append(row[0])
+            KEY.append(row[0])
             if val[0] == '0' and row[0] != "ud":
                 val = val[1:]
-            if val in keys:
-                values.append(dict_code[val])
+            if val in KEYS:
+                VALUES.append(DICT_CODE[val])
             else:
-                values.append(val)
+                VALUES.append(val)
 
     try:
         os.remove(outputname)
@@ -94,7 +94,7 @@ def translate(inputname, outputname):
 
     with open(outputname, 'w', newline='') as temp:
         spamwritter = csv.writer(temp, delimiter=',')
-        for i, j in zip(key, values):
+        for i, j in zip(KEY, VALUES):
             spamwritter.writerow([i, j])
 
 def analysis(inputname, outputname):
