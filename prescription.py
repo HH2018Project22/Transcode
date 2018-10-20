@@ -54,8 +54,8 @@ self.naissance[0], self.naissance[1], self.naissance[2], self.lieu_naissance,\
     def set_naissance(self, naissance):
         """Set the birth date"""
         self.naissance.append(naissance[6:])
-        self.naissance.append(naissance[4:5])
-        self.naissance.append(naissance[:3])
+        self.naissance.append(naissance[4:6])
+        self.naissance.append(naissance[:4])
 
     def set_lieu_naissance(self, lieu):
         """Set the birth place"""
