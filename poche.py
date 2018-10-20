@@ -12,10 +12,6 @@ class Poche():
         self.code_identification = 0
 
     def __repr__(self):
-#         """Command Line representation of the pocket"""
-#         print("""La poche contient : {0}\nElle est irradiée ? {1}
-# Elle est phénotypé ? {2}\nSon code d'identification est : {3}""".format(\
-# self.contenu, self.phenotype, self.irradier, self.code_identification))
         return ''
 
     def __str__(self):
