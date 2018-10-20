@@ -156,8 +156,7 @@ def compare_prescription(presc1, presc2):
                        "Bon_commande":presc1.get_bon_commande,
                        "Sexe":presc1.get_sexe,
                        "Date_naissance":presc1.get_naissance,
-                       "Lieu_naissance":presc1.get_lieu_naissance,
-                       "Poches":presc1.get_poches
+                       "Lieu_naissance":presc1.get_lieu_naissance
                       }
     dict_attribute2 = {"Name":presc2.get_nom,
                        "Id_inlog":presc2.get_id_inlog,
@@ -168,11 +167,38 @@ def compare_prescription(presc1, presc2):
                        "Bon_commande":presc2.get_bon_commande,
                        "Sexe":presc2.get_sexe,
                        "Date_naissance":presc2.get_naissance,
-                       "Lieu_naissance":presc2.get_lieu_naissance,
-                       "Poches":presc2.get_poches
+                       "Lieu_naissance":presc2.get_lieu_naissance
                       }
 
     for i in dict_attribute1:
         if dict_attribute1[i]() != dict_attribute2[i]():
             print("Error at {0}, {1} does not match with {2}".format(i, dict_attribute1[i](),\
             dict_attribute2[i]()))
+        else:
+            error = False
+
+    if not error:
+        print("Identity match 100%. Starting comparing blooc pocket.")
+
+    poche_presc1 = presc1.get_poches()
+    poche_presc2 = presc2.get_poches()
+    l = 0
+
+    for i, j in zip(poche_presc1.values(), poche_presc2.values()):
+        l += 1
+        error = True
+        dict_i={"Contenu":i.get_contenu,
+                "Phenotype":i.get_phenotype,
+                "Irradier":i.get_irradier,
+                "Code_ID":i.get_code_identification
+               }
+        dict_j={"Contenu":j.get_contenu,
+                "Phenotype":j.get_phenotype,
+                "Irradier":j.get_irradier,
+                "Code_ID":j.get_code_identification
+               }
+
+        for k in dict_i:
+            if dict_i[k]() != dict_j[k]():
+                print("Error at {0}, {1} does not match with {2} for blood pockect {3}".format(k,\
+                dict_i[k](), dict_j[k](), l))
