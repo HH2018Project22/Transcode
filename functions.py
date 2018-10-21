@@ -9,9 +9,6 @@ import prescription
 
 DICT_CODE = dict()
 
-KEY = []
-KEYS = []
-VALUES = []
 
 
 
@@ -54,6 +51,9 @@ def recuperation(inputname, outputname):
 
 def translate(inputname, outputname):
     """Analyse filename"""
+    VALUES = []
+    KEY = []
+    KEYS = []
 
     with open("Code_Facturation_Inlog.csv") as facturation:
         dict_temp = dict()
@@ -92,7 +92,7 @@ def translate(inputname, outputname):
     with open(outputname, mode='w') as temp:
         pass
 
-
+    temp = 0
     with open(outputname, 'w', newline='') as temp:
         spamwritter = csv.writer(temp, delimiter=',')
         for i, j in zip(KEY, VALUES):
@@ -101,11 +101,12 @@ def translate(inputname, outputname):
 def analysis(inputname, outputname):
     """Analysing all input data in AFNOR format"""
     i = 0
+    pocket = 0
     pocket = dict()
 
     with open(inputname) as temp:
         spamreader = csv.reader(temp)
-        for row in spamreader:
+        for row, w in zip(spamreader,range(19)):
             if row[0] == "pj":
                 i += 1
                 pocket["poche_" + str(i)] = poche.Poche(row[1])
@@ -181,14 +182,12 @@ def compare_prescription(presc1, presc2):
             else:
                 print("Important Warning! Take a look at {0}, {1} does not \
 match with {2}".format(i, dict_attribute1[i](), dict_attribute2[i]()))
-    print("Identity match 100%. Starting comparing blood pocket.")
+    print("Identity match. Starting comparing blood pocket.")
 
     poche_presc1 = presc1.get_poches()
     poche_presc2 = presc2.get_poches()
-    L = 0
 
     for i, j in zip(poche_presc1.values(), poche_presc2.values()):
-        L += 1
         dict_i = {"Contenu":i.get_contenu,
                   "Phenotype":i.get_phenotype,
                   "Irradier":i.get_irradier,
